@@ -4,9 +4,9 @@ import plotly.graph_objects as go
 import plotly.express as px
 import time
 
-st.set_page_config(page_title="情報とメディアの特性", page_icon="🚀", layout="wide")
+st.set_page_config(page_title="情報やメディアの特性", page_icon="🚀", layout="wide")
 
-st.title("情報とメディアの特性")
+st.title("情報やメディアの特性（pp.204-205）")
 st.caption("Created by Dit-Lab.(Daiki ITO)")
 st.caption("Supported by Tomoaki ATSUMI")
 
