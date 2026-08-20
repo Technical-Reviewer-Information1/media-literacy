@@ -3,7 +3,11 @@
  "title": "情報やメディアの特性",
  "pp": "pp.204",
  "lead": "DIKWモデルで情報の段階を見分け、拡散シミュレーションで情報の特性を体験します。見出しひとつで印象が変わることも確かめられます。",
- "scripts": ["chart.js","terms.js","quiz.js","app.js"],
+ "scripts": [
+  "terms.js",
+  "quiz.js",
+  "app.js"
+ ],
  "use": {
   "class": [
    "STEP 1 で身近な話題をデータ・情報・知識・知恵に分けさせる。",
