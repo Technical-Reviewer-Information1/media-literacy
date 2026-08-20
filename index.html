@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>情報やメディアの特性｜情報Ⅰ共通テスト対策問題集</title>
+<meta name="description" content="DIKWモデルで情報の段階を見分け、拡散シミュレーションで情報の特性を体験します。見出しひとつで印象が変わることも確かめられます。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%2315181c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2218%22 font-family=%22monospace%22 fill=%22%23fff%22 text-anchor=%22middle%22%3E01%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<header class="app-header">
+  <div class="inner">
+    <span class="eyebrow">第 8 章　情報社会　8-1</span>
+    <h1>情報やメディアの特性（pp.204）</h1>
+    <p class="lead">DIKWモデルで情報の段階を見分け、拡散シミュレーションで情報の特性を体験します。見出しひとつで印象が変わることも確かめられます。</p>
+    <p class="credit">Created by Dit-Lab.(Daiki ITO)　/　Supported by Tomoaki ATSUMI</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="step" id="step1">
+    <h2><span class="no">STEP 1</span>DIKWモデルで段階を見分ける（問1）</h2>
+    <p class="desc">同じ話題でも、<strong>データ → 情報 → 知識 → 知恵</strong>と段階が上がるにつれて、意味づけや判断が加わります。</p>
+    <div class="panel">
+      <div class="dikw" id="dikwBox"></div>
+      <hr class="sep">
+      <p class="qhead">次の記述はどの段階か</p>
+      <div id="sortBox"></div>
+      <div class="note" id="sortNote" style="margin-top:12px"></div>
+      <hr class="sep">
+      <div id="q1Box"></div>
+      <div class="note" id="q1Note" style="margin-top:10px"></div>
+    </div>
+  </section>
+
+  <section class="step" id="step2">
+    <h2><span class="no">STEP 2</span>情報の特性を体験する（問2）</h2>
+    <p class="desc">情報には<strong>残存性・複製性・伝播性</strong>という特性があります。まず「どれくらい速く広がるか」を確かめましょう。</p>
+    <div class="panel">
+      <div class="grid c2">
+        <div>
+          <label class="fld" for="shareN">1人が平均何人に伝えるか：<span class="mono" id="shareNV">3</span> 人</label>
+          <input type="range" id="shareN" min="1" max="6" step="1" value="3">
+          <label class="fld" for="steps" style="margin-top:12px">何段階まで広がるか：<span class="mono" id="stepsV">8</span> 段階</label>
+          <input type="range" id="steps" min="2" max="14" step="1" value="8">
+          <div class="metrics" style="margin-top:12px">
+            <div class="metric"><div class="k">届いた人数（累計）</div><div class="v" id="reachV" style="font-size:1.4rem">—</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="spreadbar" id="spreadBox"></div>
+          <div class="note" id="spreadNote" style="margin-top:26px"></div>
+        </div>
+      </div>
+      <hr class="sep">
+      <div class="tbl-scroll"><table class="tbl" id="charTable"></table></div>
+      <hr class="sep">
+      <div id="q2Box"></div>
+      <div class="note" id="q2Note" style="margin-top:10px"></div>
+    </div>
+  </section>
+
+  <section class="step" id="step3">
+    <h2><span class="no">STEP 3</span>同じ事実でも印象は変わる（問3）</h2>
+    <p class="desc">下の事実はすべて同じです。見出しと書き方を変えると、受け取る印象がどう変わるでしょうか。</p>
+    <div class="panel">
+      <div class="note info" style="margin-bottom:10px">
+        <strong>もとになった事実</strong>：ある高校の生徒100人にアンケートしたところ、朝食を毎日食べる生徒は62人、食べない日がある生徒は38人だった。
+      </div>
+      <div class="btn-row" style="flex-wrap:wrap">
+        <button class="btn" data-h="0">見出しA</button>
+        <button class="btn" data-h="1">見出しB</button>
+        <button class="btn" data-h="2">見出しC</button>
+      </div>
+      <div id="headBox"></div>
+      <div class="note" id="headNote" style="margin-top:12px"></div>
+      <hr class="sep">
+      <div id="q3Box"></div>
+      <div class="note" id="q3Note" style="margin-top:10px"></div>
+    </div>
+  </section>
+
+  <section class="step" id="glossary">
+    <h2><span class="no">用語</span>この節で出てくることば</h2>
+    <div class="panel"><div id="glossBox"></div></div>
+  </section>
+
+  <section class="step" id="wrap">
+    <h2><span class="no">まとめ</span>おさえておきたいこと</h2>
+    <div class="panel">
+      <ul class="bullets">
+        <li><strong>DIKWモデル</strong>：データ（事実そのもの）→ 情報（意味づけされたデータ）→ 知識（体系化された情報）→ 知恵（判断・行動に生かす力）。</li>
+        <li>情報の特性は<strong>残存性</strong>（消えずに残る）・<strong>複製性</strong>（簡単にコピーできる）・<strong>伝播性</strong>（速く広く伝わる）。</li>
+        <li>一度拡散した情報を<strong>すべて削除するのは困難</strong>。投稿する前に考えることが大切。</li>
+        <li>「いいね」や共有の数は<strong>信ぴょう性の証明にはならない</strong>。</li>
+        <li>メディアで伝えられる情報には<strong>発信者の主観や意図が含まれる</strong>。受け手はそれを理解して受け取る必要がある（メディアリテラシー）。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="step">
+    <h2><span class="no">活用</span>授業・探究での使い方</h2>
+    <div class="use-note">
+      <h3>授業で</h3>
+      <ul>
+        <li>STEP 1 で身近な話題をデータ・情報・知識・知恵に分けさせる。</li>
+        <li>STEP 2 の拡散シミュレーションで、数時間で何万人に届くかを計算し、投稿前に考える習慣につなげる。</li>
+        <li>STEP 3 で同じ事実から違う見出しを作らせ、メディアの主観について話し合う。</li>
+      </ul>
+      <h3 style="margin-top:12px">探究で</h3>
+      <ul>
+        <li>同じニュースを複数の新聞・サイトで読み比べ、見出しの違いを分析する。</li>
+        <li>自分のSNSで拡散された投稿がどこまで届いたかを推定する。</li>
+        <li>デジタルタトゥーが問題になった事例を調べ、情報の残存性について考える。</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  情報Ⅰ 共通テスト対策問題集（技術評論社）連動Webアプリ　/　Created by Dit-Lab.(Daiki ITO)　/　Supported by Tomoaki ATSUMI
+</footer>
+
+<script src="js/tools.js"></script>
+<script src="js/chart.js"></script>
+<script src="js/terms.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
